@@ -1,5 +1,3 @@
-import string
-
 def is_palindrome(s):
     s = str(s)
     cleaned = ''.join(cher.lower() for cher in s if cher.isalnum())
