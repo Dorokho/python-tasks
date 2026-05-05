@@ -5,6 +5,7 @@ class NoSuchStrategyError(Exception):
     pass
 
 def rps_game_winner(players):
+    # Проверка количества игроков
     if len(players) != 2:
         raise WrongNumberOfPlayersError
     
@@ -13,17 +14,21 @@ def rps_game_winner(players):
     name1, move1 = player1
     name2, move2 = player2
 
+    # Приводим к верхнему регистру
     move1 = move1.upper()
     move2 = move2.upper()
     
     valid_moves = ['R', 'P', "S"]
 
+    # Проверка допустимых ходов
     if move1 not in valid_moves or move2 not in valid_moves:
         raise NoSuchStrategyError
     
+    # Если одинаковые — выигрывает первый
     if move1 == move2:
         return player1
     
+    # Проверка победителя
     if (
         (move1 == 'R' and move2 == 'S') or
         (move1 == 'S' and move2 == 'P') or

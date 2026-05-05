@@ -1,16 +1,19 @@
 def sort_list(lst):
-    if not lst:
+    if not lst:    # если список пустой
         return lst
     
+    # Находим исходные min и max
     min_val = min(lst)
     max_val = max(lst)
 
+    # Меняем местами
     for i in range(len(lst)):
         if lst[i] == min_val:
             lst[i] = max_val
         elif lst[i] == max_val:
             lst[i] = min_val
 
+    # Добавляем одно минимальное значение (исходное!)
     lst.append(min_val)
 
     return lst

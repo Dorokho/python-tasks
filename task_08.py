@@ -1,13 +1,13 @@
 def multiply_numbers(inputs=None):
-    if inputs is None:
+    if inputs is None:    # если список пустой
         return None
     
     result = 1
     found_digit = False
 
     for ch in str(inputs):
-        if ch.isdigit():
-            result *= int(ch)
+        if ch.isdigit():    # проверка значения
+            result *= int(ch)   # умножение
             found_digit = True
 
     return result if found_digit else None

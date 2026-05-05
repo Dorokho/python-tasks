@@ -1,4 +1,5 @@
 def coincidence(lst=None, rng=None):
+    # Если хотя бы один параметр не передан
     if lst is None or rng is None:
         return[]
     
